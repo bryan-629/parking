@@ -1,0 +1,27 @@
+.inputInicio{
+    width: 300px;
+    outline: none;
+    height: 40px;
+    color: gray;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 5px;
+
+}
+
+.boton{
+    width: 300px;
+    outline: none;
+    height: 40px;
+    color: white;
+    border-style: none;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: black;
+}
+.boton:hover{
+    cursor: pointer;
+    
+}
