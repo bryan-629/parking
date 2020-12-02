@@ -18,13 +18,14 @@ span{
 }
 span:hover{
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.2);
+    
     transform: scale(1.1);
     transition: all 0.2s ease;
 }
 .fondonegro{
     background-color: rgb(50, 50, 50);
     color: white;
+    
 }
 #formulario{
     border-style: solid;
@@ -32,4 +33,9 @@ span:hover{
     border-color: gray;
     border-width: 1px;
     border-radius: 5px;
+}
+.alertaRojaVisible{
+    display: flex;
+    padding: 10px;
+    background-color: rgba(255, 0, 0, 0.5);
 }
