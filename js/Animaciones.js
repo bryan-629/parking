@@ -19,6 +19,7 @@ var Animacion= {//Esta clase trata todas las animaciones. Apariciones, desaparic
         document.getElementById(`${idTexto}`).innerHTML=Texto;
     },
     limpiarAlertaRoja: function (id,idTexto) { //esta funcion esconde la aletra roja
+       
             document.getElementById(`${id}`).classList.remove("alertaRojaVisible");
             document.getElementById(`${idTexto}`).innerHTML="";   
     }
