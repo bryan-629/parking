@@ -30,7 +30,7 @@ var Recoger = { //Esta clase trata todos los datos del documento para validarlos
             if(Recoger.patterPass.test(Recoger.pass)){//Si pasa el test la contraseña, entonces vamos comprobar su existencia
                 console.log("patron usuario correcto " + Recoger.pass);
         
-                if (Usuarios.compobar(Recoger.user,Recoger.pass)==true) {//El metodo retorna true si existe y false si no existe y recibe usuario y contraseña
+                if (Usuarios.comprobar(Recoger.user,Recoger.pass)==true) {//El metodo retorna true si existe y false si no existe y recibe usuario y contraseña
                     console.log("El usuario se encuentra almacenado en la base de datos");
                     location.href="html/acciones.html";
                     document.getElementById("prueba").innerHTML=Recoger.user;

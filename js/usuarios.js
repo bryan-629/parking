@@ -9,7 +9,7 @@ var Usuarios= {
     },
 
 
-    compobar: function(nombre, contra){//Comprobamos si existen los datos introducidos
+    comprobar: function(nombre, contra){//Comprobamos si existen los datos introducidos
        
         for(var i=0 ; i<this.usuario.length; i++){
             if (nombre==this.usuario[i]) {
