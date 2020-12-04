@@ -8,7 +8,8 @@ var inicio ={
     iniciarApp: function () {
         console.log("App iniciada correctamente");
         Animacion.iniciar();
-        Recoger.iniciar();   
+        Recoger.iniciar();  
+        Usuarios.iniciar();
     }
 }
 
