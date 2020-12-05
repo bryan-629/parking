@@ -10,6 +10,8 @@ var inicio ={
         Animacion.iniciar();
         Recoger.iniciar();  
         Usuarios.iniciar();
+        
+        
     }
 }
 

@@ -139,7 +139,9 @@
 
 .visible{
     display: flex;
+    visibility: visible;
 }
-.invisble{
+.invisible{
     display: none;
+    visibility: none;
 }

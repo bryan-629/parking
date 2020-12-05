@@ -8,6 +8,7 @@ var Recoger = { //Esta clase trata todos los datos del documento para validarlos
     iniciar: function(){
         document.getElementById("botonEntrar").addEventListener("click", ()=>{//escuchamos el click para comprobar los datos 
         this.patronesInicioSesion();
+        document.getElementById("inputUsuario").value="";
         });
 
         
@@ -22,8 +23,8 @@ var Recoger = { //Esta clase trata todos los datos del documento para validarlos
     },
 
     patronesInicioSesion: function(){ //Se encarga de comprobar los datos del formulario 
-        Recoger.user= document.getElementById("inputUsuario").value;//Recogemos los datos de usuario y contraseña
-        Recoger.pass= document.getElementById("contraseña").value;
+        Recoger.user= this.recoger('inputUsuario');//Recogemos los datos de usuario y contraseña
+        Recoger.pass=  this.recoger('contraseña');
        
         if (Recoger.patterUser.test(Recoger.user)) {//Si pasa el test el nombre pasamos al siguiente
             console.log("patron usuario correcto " + Recoger.user);
@@ -32,8 +33,10 @@ var Recoger = { //Esta clase trata todos los datos del documento para validarlos
         
                 if (Usuarios.comprobar(Recoger.user,Recoger.pass)==true) {//El metodo retorna true si existe y false si no existe y recibe usuario y contraseña
                     console.log("El usuario se encuentra almacenado en la base de datos");
+                    sessionStorage.setItem("nombre", Recoger.user);
+                    sessionStorage.setItem("pass", Recoger.pass);
                     location.href="html/acciones.html";
-                    document.getElementById("prueba").innerHTML=Recoger.user;
+                    d
                 }else{
                     console.log("el usuaario no esta almacenado en la base de datos");
                     Animacion.alertaRoja("alertaInicio","alertaInicioTexto","El usuario no esta almacenado en la base de datos");
@@ -49,6 +52,14 @@ var Recoger = { //Esta clase trata todos los datos del documento para validarlos
             Animacion.alertaRoja("alertaInicio","alertaInicioTexto","El nombre no es correcto, solo se admiten digitos alfabeticos.")//funcion que muestra la alerta en caso de error
         }
 
+    },
+    recoger: function(idARecoger){
+        var a = document.getElementById(`${idARecoger}`).value;
+        return a;
     }
+
+
+
+
 
 }

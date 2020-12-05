@@ -42,3 +42,8 @@ span:hover{
     max-width: 700px;
     
 }
+.pestañas{
+    position:absolute;
+    left:0;
+    top: -500;
+}
