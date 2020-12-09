@@ -8,32 +8,88 @@
     <link rel="stylesheet" href="../css/utilidades.css">
     <link rel="stylesheet" href="../css/containers.css">
     <link rel="stylesheet" href="../css/inputs.css">
+    <link rel="icon" type="image/png"  href="img/favicon.ico">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
-<body id="body">
+<body id="body" style="overflow:hidden;">
     
-        <div class="containervh jus-center al-center flex-dir-col invisble d-flex" id="cliente"> 
-            <div class="grupo__iconos__iteractuar jus-center mt-3 ">
-                <p id="nombreUsuario"></p>
-            </div>
+
+
+    <div class="grupo__iconos__iteractuar jus-center  ">
+        <p id="nombreUsuario"></p>
+    </div>
+    <div class="pestañas">
+        <button class="active" id="btnEntrada">Entrada</button>
+        <button id="btnSalida" >Salida</button>
+        <button class="" id="btnAlta">Alta</button>
+        <button id="btnConsulta" style="overflow:hidden;">Consultas</button>
+ </div>
+
+
+
+
+
+
+        <div class="containervh invisble" id="entrada"> 
             
            
             <div class="d-flex  flex-dir-col mb-3" id="formulario">
              
-                 <h1 class="mb-2 txt-center">Inicio session</h1>
+                 <h1 class="mb-2 txt-center">Entrada</h1>
              
-                <label for="inputUsuario" class="mb-1">Matricula:</label>
-                 <input type="text" class="inputInicio mb-2" autofocus name="" id="matricula" placeholder="Matricula">
-                 <button class="boton mt-1" id="botonEntrar">Entrar</button>
+                <label for="matricula" class="mb-1">Matricula:</label>
+                 <input type="text" class="inputInicio mb-2" autofocus name="" id="matriculaEntrada" placeholder="Matricula">
+                 <button class="boton mt-1" id="botonEntrada">Entrar</button>
+             </div>
+             <div class="" id="alertaEntrada">
+                 <p class="txt-center" id="alertaTextoEntrada"></p>
+             </div>
+            
+            
+             
+        </div>
+
+
+
+
+
+        <div class="containervh invisible" id="salida"> 
+            <div class="d-flex flex-dir-col mb-3" id="formulario">
+             
+                 <h1 class="mb-2 txt-center">Salida</h1>
+             
+                <label for="matricula" class="mb-1">Matricula:</label>
+                 <input type="text" class="inputInicio mb-2" autofocus name="" id="matriculaSalida" placeholder="Matricula">
+                 <button class="boton mt-1" id="botonSalida">Entrar</button>
              </div>
              <div class="" id="alertaInicio">
                  <p class="txt-center" id="alertaInicioTexto"></p>
              </div>
-             <div class="pestañas">
-                <button>Entrada</button>
-                <button>Salida</button>
-                <button>Consultas</button>
-         </div>
+            
+             
+        </div>
+
+
+
+
+       
+
+
+
+
+        <div class="containervh invisible" id="consulta"> 
+            <div class="d-flex flex-dir-col mb-3" id="formulario">
+             
+                 <h1 class="mb-2 txt-center">Consulta</h1>
+             
+                <label for="matricula" class="mb-1">Matricula:</label>
+                 <input type="text" class="inputInicio mb-2" autofocus name="" id="matriculaconsulta" placeholder="Matricula">
+                 <button class="boton mt-1" id="botonConsulta">Entrar</button>
+             </div>
+             <div class="" id="alertaInicio">
+                 <p class="txt-center" id="alertaInicioTexto"></p>
+             </div>
+            
              
         </div>
         

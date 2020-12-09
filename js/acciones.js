@@ -1,31 +1,173 @@
 
 document.addEventListener('DOMContentLoaded', function(){
     Acciones.iniciar();
-    Animacion.iniciar();
+
+
+    
+
 },false);
 
 
 var Acciones= {
     usuario: sessionStorage.getItem('nombre'),
     pass: sessionStorage.getItem('pass'),
-
-
+    btnEntrada: document.getElementById("btnEntrada"),
+    btnSalida: document.getElementById("btnSalida"),
+    btnAlta: document.getElementById("btnAlta"),
+    btnConsulta: document.getElementById("btnConsulta"),
+    tamañoFuente: sessionStorage.getItem('tamaño'),
+    color: sessionStorage.getItem('color'),
+    garaje:[],
+    coches: [],
 
     iniciar: function(){
+        document.getElementById('matriculaEntrada').addEventListener('keyup', function(e){
+            Animacion.limpiarAlertaRoja('alertaEntrada','alertaTextoEntrada');
+        });
+    
+        
+        document.getElementById('body').style.fontSize=this.tamañoFuente+ "px";//RECIVIMOS LOS DATOS DEL OTRO HTML
+        if (this.color == "true") {
+            document.getElementById('body').classList.add('fondonegro');
+            this.btnAlta.classList.add('fondonegro');
+            this.btnSalida.classList.add('fondonegro');
+            this.btnEntrada.classList.add('fondonegro');
+            this.btnConsulta.classList.add('fondonegro');
+        }
+
+
+
+
+
+        
+
         if(this.usuario==null|| this.pass==null){//VAMOS A CONTROLAR QUE REALMENTE A INICIADO SESION,
             // Y QUE ACCEDA OBLIGATORIAMENTE ACCEDIENDO POR EL LOGIN, DE ESTA MANERA EVITAMOS EL ACCESO POR URL
             location.href="../Index.html";
             sessionStorage.clear();
     }else{//Si esta codo correcto....
         document.getElementById("nombreUsuario").innerHTML="Bienvenido "+ this.usuario;
-        Animacion.mostrarContenido("cliente");
+        Animacion.mostrarContenido("entrada");
 
         //ESCUCHAMOS SI CAMBIA A URL Y MUESTRA LA ALERTA DE QUE SE PUEDEN PERDER LOS DATOS
         window.addEventListener('beforeunload', function (e) {
             e.returnValue= sessionStorage.clear();//limpiamos los datos para que no le permita entrar 
           }); 
-    } 
-}
+    
+
+    this.btnAlta.addEventListener('click', ()=>{// CONTROLAMOS LAS ANIMACIONES. SE PUEDE COMPIMIZAR USANDO e.target BUT ES TARDE
+        Animacion.mostrarContenido('alta');
+        Animacion.ocultarContenido('entrada');
+        Animacion.ocultarContenido('salida');
+        Animacion.ocultarContenido('consulta');
+        Animacion.active('btnAlta');
+        Animacion.desactive('btnEntrada');
+        Animacion.desactive('btnSalida');
+        Animacion.desactive('btnConsulta');
+    });
+    this.btnEntrada.addEventListener('click', ()=>{
+        Animacion.mostrarContenido('entrada');
+        Animacion.ocultarContenido('salida');
+        Animacion.ocultarContenido('alta');
+        Animacion.ocultarContenido('consultar');
+        Animacion.active('btnEntrada');
+        Animacion.desactive('btnSalida');
+        Animacion.desactive('btnAlta');
+        Animacion.desactive('btnConsulta');
+        
+    });
+    this.btnSalida.addEventListener('click', ()=>{
+            Animacion.mostrarContenido('salida');
+            Animacion.ocultarContenido('entrada');
+            Animacion.ocultarContenido('alta');
+            Animacion.ocultarContenido('consulta');
+            Animacion.active('btnSalida');
+            Animacion.desactive('btnEntrada');
+            Animacion.desactive('btnAlta');
+            Animacion.desactive('btnConsulta');
+    });
+    this.btnConsulta.addEventListener('click', ()=>{
+        Animacion.mostrarContenido('consulta');
+        Animacion.ocultarContenido('entrada');
+        Animacion.ocultarContenido('salida');
+        Animacion.ocultarContenido('alta');
+        Animacion.active('btnConsulta');
+        Animacion.desactive('btnEntrada');
+        Animacion.desactive('btnAlta');
+        Animacion.desactive('btnSalida');
+});
+
+
+document.getElementById('botonEntrada').addEventListener('click', ()=>{ //ENTRADA AL GARAJE
+    dato = Recoger.recoger('matriculaEntrada');
+    dato = dato.toUpperCase();
+    if (Recoger.controlMatricula(dato)==true) {
+        if (Recoger.existenciaDeCoches(dato)==true) {
+            if (Recoger.existenciaEnGaraje(dato)==true) {
+                Animacion.alertaRoja('alertaEntrada','alertaTextoEntrada',"Ya esta dentro del del garaje");
+            }else{
+                alert("Abrir Barrera");
+                this.garaje.push(dato);
+            }
+        }else{
+            Animacion.alertaRoja('alertaEntrada','alertaTextoEntrada',"La matricula no esta dada de alta");
+        }
+    }else{
+        Animacion.alertaRoja('alertaEntrada','alertaTextoEntrada',"El formato de la matrícula no es correcto");
+    }
+});
+
+
+document.getElementById('botonSalida').addEventListener('click', ()=>{ //ENTRADA AL GARAJE
+    dato = Recoger.recoger('matriculaSalida');
+    dato = dato.toUpperCase();
+    if (Recoger.controlMatricula(dato)==true) {
+        if (Recoger.existenciaDeCoches(dato)==true) {
+            if (Recoger.existenciaEnGaraje(dato)==true) {
+                this.garaje.pop(dato);
+            }else{
+                alert("Abrir Barrera");
+                
+                Animacion.alertaRoja('alertaEntrada','alertaTextoEntrada',"Ya esta dentro del del garaje");
+            }
+        }else{
+            Animacion.alertaRoja('alertaEntrada','alertaTextoEntrada',"La matricula no esta dada de alta");
+        }
+    }else{
+        Animacion.alertaRoja('alertaEntrada','alertaTextoEntrada',"El formato de la matrícula no es correcto");
+    }
+});
+
+
+    }
+
+    },
+
+    
+    alta: function(){
+        matricula = Recoger.recoger('matriculaEntrada');
+        modelo = Recoger.recoger('modeloEntrada');
+        marca = Recoger.recoger('marcaEntrada');
+        color = Recoger.recoger('colorEntrada');
+        nombre = Recoger.recoger('nombreEntrada');
+        apellido = Recoger.recoger('apellidoEntrada');
+        email = Recoger.recoger('emailEntrada');
+
+        if (Recoger.controlMatricula()==true) {
+            if (Recoger.controlTextos(modelo)==true && Recoger.controlTextos(marca)
+            &&Recoger.controlTextos(color)&& Recoger.controlTextos(nombre)&&Recoger.controlTextos(apellido)) {
+                if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(email)) {
+                    
+                }else{
+                    Animacion.alertaRoja('alertaAlta','alertaTextoAlta',"El formato del email no es correcto");
+                }
+            }else{
+                Animacion.alertaRoja('alertaAlta','alertaTextoAlta',"El formato de los campos de texto no es correcto");
+            }
+            
+        }
+    }
+
 
 }
 

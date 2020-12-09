@@ -9,6 +9,7 @@ var Recoger = { //Esta clase trata todos los datos del documento para validarlos
         document.getElementById("botonEntrar").addEventListener("click", ()=>{//escuchamos el click para comprobar los datos 
         this.patronesInicioSesion();
         document.getElementById("inputUsuario").value="";
+        document.getElementById("contraseña").value="";
         });
 
         
@@ -33,10 +34,10 @@ var Recoger = { //Esta clase trata todos los datos del documento para validarlos
         
                 if (Usuarios.comprobar(Recoger.user,Recoger.pass)==true) {//El metodo retorna true si existe y false si no existe y recibe usuario y contraseña
                     console.log("El usuario se encuentra almacenado en la base de datos");
-                    sessionStorage.setItem("nombre", Recoger.user);
-                    sessionStorage.setItem("pass", Recoger.pass);
+                    window.sessionStorage.setItem("nombre", Recoger.user);
+                    window.sessionStorage.setItem("pass", Recoger.pass);
                     location.href="html/acciones.html";
-                    d
+                    
                 }else{
                     console.log("el usuaario no esta almacenado en la base de datos");
                     Animacion.alertaRoja("alertaInicio","alertaInicioTexto","El usuario no esta almacenado en la base de datos");
@@ -56,8 +57,68 @@ var Recoger = { //Esta clase trata todos los datos del documento para validarlos
     recoger: function(idARecoger){
         var a = document.getElementById(`${idARecoger}`).value;
         return a;
-    }
+    },
 
+    controlMatricula: function(datos){
+        patronActuales= /^[0-9]{4}[a-zA-Z]{3}$/;
+
+        if (patronActuales.test(datos)) {
+            return true;
+        }else{
+            return false
+        }
+    },
+    controlTextos(datos){
+        patron= /^[a-zA-Z]{2,15}$/;
+
+        if (patron.test(datos)) {
+            return true;
+        }else{
+            return false
+        }
+    },
+    
+
+    existenciaDeCoches: function(matricula){
+        var coches = Acciones.coches;
+        
+        if (coches.length==0) {
+            return false;
+        }else{
+            for(var i=0 ; i<coches.length; i++){
+                if (matricula==coche[i].matricula) {
+                
+                        i=this.usuario.length;
+                        return true;
+            
+                }
+                if (i==coche.length-1) {
+                    return false
+                }
+            }
+
+        }
+    },
+    existenciaEnGaraje: function(matricula){
+        var garaje = Acciones.garaje;
+        
+        if (garaje.length==0) {
+            return false;
+        }else{
+            for(var i=0 ; i<garaje.length; i++){
+                if (matricula==garaje[i].matricula) {
+                
+                        i=this.usuario.length;
+                        return true;
+            
+                }
+                if (i==garaje.length-1) {
+                    return false
+                }
+            }
+
+        }
+    }
 
 
 

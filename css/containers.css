@@ -43,7 +43,12 @@ span:hover{
     
 }
 .pestañas{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
     position:absolute;
-    left:0;
-    top: -500;
+    top: 1px;
+    z-index: 500;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
 }

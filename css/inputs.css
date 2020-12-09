@@ -25,3 +25,17 @@
     cursor: pointer;
     
 }
+button{
+    width:150px;
+    outline: none;
+    height: 30px;
+    border-style: solid;
+    border-bottom-style: none;
+    background-color: white ;
+}
+button:hover{
+    transform: scale(1.05);
+}
+.active{
+    transform: scale(1.05);
+}

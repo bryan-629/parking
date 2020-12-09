@@ -140,6 +140,9 @@
 .visible{
     display: flex;
     visibility: visible;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .invisible{
     display: none;
