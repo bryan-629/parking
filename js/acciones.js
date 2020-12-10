@@ -96,80 +96,9 @@ var Acciones= {
         Animacion.desactive('btnAlta');
         Animacion.desactive('btnSalida');
 });
-
-
-document.getElementById('botonEntrada').addEventListener('click', ()=>{ //ENTRADA AL GARAJE
-    dato = Recoger.recoger('matriculaEntrada');
-    dato = dato.toUpperCase();
-    if (Recoger.controlMatricula(dato)==true) {
-        if (Recoger.existenciaDeCoches(dato)==true) {
-            if (Recoger.existenciaEnGaraje(dato)==true) {
-                Animacion.alertaRoja('alertaEntrada','alertaTextoEntrada',"Ya esta dentro del del garaje");
-            }else{
-                alert("Abrir Barrera");
-                this.garaje.push(dato);
-            }
-        }else{
-            Animacion.alertaRoja('alertaEntrada','alertaTextoEntrada',"La matricula no esta dada de alta");
-        }
-    }else{
-        Animacion.alertaRoja('alertaEntrada','alertaTextoEntrada',"El formato de la matrícula no es correcto");
-    }
-});
-
-
-document.getElementById('botonSalida').addEventListener('click', ()=>{ //ENTRADA AL GARAJE
-    dato = Recoger.recoger('matriculaSalida');
-    dato = dato.toUpperCase();
-    if (Recoger.controlMatricula(dato)==true) {
-        if (Recoger.existenciaDeCoches(dato)==true) {
-            if (Recoger.existenciaEnGaraje(dato)==true) {
-                this.garaje.pop(dato);
-            }else{
-                alert("Abrir Barrera");
-                
-                Animacion.alertaRoja('alertaEntrada','alertaTextoEntrada',"Ya esta dentro del del garaje");
-            }
-        }else{
-            Animacion.alertaRoja('alertaEntrada','alertaTextoEntrada',"La matricula no esta dada de alta");
-        }
-    }else{
-        Animacion.alertaRoja('alertaEntrada','alertaTextoEntrada',"El formato de la matrícula no es correcto");
-    }
-});
-
-
-    }
-
-    },
-
+}
     
-    alta: function(){
-        matricula = Recoger.recoger('matriculaEntrada');
-        modelo = Recoger.recoger('modeloEntrada');
-        marca = Recoger.recoger('marcaEntrada');
-        color = Recoger.recoger('colorEntrada');
-        nombre = Recoger.recoger('nombreEntrada');
-        apellido = Recoger.recoger('apellidoEntrada');
-        email = Recoger.recoger('emailEntrada');
-
-        if (Recoger.controlMatricula()==true) {
-            if (Recoger.controlTextos(modelo)==true && Recoger.controlTextos(marca)
-            &&Recoger.controlTextos(color)&& Recoger.controlTextos(nombre)&&Recoger.controlTextos(apellido)) {
-                if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(email)) {
-                    
-                }else{
-                    Animacion.alertaRoja('alertaAlta','alertaTextoAlta',"El formato del email no es correcto");
-                }
-            }else{
-                Animacion.alertaRoja('alertaAlta','alertaTextoAlta',"El formato de los campos de texto no es correcto");
-            }
-            
-        }
-    }
-
-
 }
 
-    
+}   
 
