@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
 },false);
 
-
 var Acciones= {
     usuario: sessionStorage.getItem('nombre'),
     pass: sessionStorage.getItem('pass'),
@@ -46,6 +45,7 @@ var Acciones= {
             location.href="../Index.html";
             sessionStorage.clear();
     }else{//Si esta codo correcto....
+        formulario.deteccionInputs('#salida','input');
         document.getElementById("nombreUsuario").innerHTML="Bienvenido "+ this.usuario;
         Animacion.mostrarContenido("entrada");
 
