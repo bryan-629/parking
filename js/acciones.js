@@ -20,6 +20,9 @@ var Acciones= {
     coches: [],
 
     iniciar: function(){
+
+       var form=new Formulario('entrada', 'input', 'alertaEntrada','alertaTextoEntrada','botonEntrada');
+        form.iniciar();
         document.getElementById('matriculaEntrada').addEventListener('keyup', function(e){
             Animacion.limpiarAlertaRoja('alertaEntrada','alertaTextoEntrada');
         });
@@ -34,7 +37,7 @@ var Acciones= {
             this.btnConsulta.classList.add('fondonegro');
         }
 
-
+        
 
 
 
@@ -45,7 +48,7 @@ var Acciones= {
             location.href="../Index.html";
             sessionStorage.clear();
     }else{//Si esta codo correcto....
-        formulario.deteccionInputs('#salida','input');
+       
         document.getElementById("nombreUsuario").innerHTML="Bienvenido "+ this.usuario;
         Animacion.mostrarContenido("entrada");
 
