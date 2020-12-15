@@ -5,7 +5,9 @@ function Formulario(formulario, inputs, idAlerta,idAlertaTexto,btn){
     this.idAlertaTexto=idAlertaTexto;
     this.btn=document.getElementById(`${btn}`);
     this.limpieza(idAlerta,idAlertaTexto);
-    this.comprobar();
+    this.testMatricula(idAlerta,idAlertaTexto,this.inputs);
+
+    
     
     
     
@@ -13,31 +15,43 @@ function Formulario(formulario, inputs, idAlerta,idAlertaTexto,btn){
    
     
 
+};
+
+Formulario.prototype.estaDadoDeAlta =function (matricula) {
+    for (let index = 0; index < Acciones.garaje.length; index++) {
+        
+    }
+    
 }
-Formulario.prototype.iniciar= function(){
 
-
-
+Formulario.prototype.testMatricula = function(idAlerta,idAlertaTexto, input){
+    patronMatricula= /^[0-9]{4}[A-Za-z]{3}/;
+    this.btn.addEventListener('click', function () {
+       input.forEach(element =>{
+            if(patronMatricula.test(element.value)){
+                return true;
+            }else{
+                console.log("Incorrecto");
+                element.value="";
+                Animacion.alertaRoja(idAlerta,idAlertaTexto,"La matricula no es correcta");
+                return false;
+            }
+        }
+            );
+    });
 };
 
-Formulario.prototype.comprobar =function(){
 
-
-  
-};
-
-Formulario.prototype.limpieza = function(idAlerta,idAlertaTexto){//usamos prototype para las herencias, asi evitamos 
-    //crear esta funcion por cada objeto, con el fin de no consumir memoria inecesariamente
+Formulario.prototype.limpieza = function(idAlerta,idAlertaTexto){
+    
     this.inputs.forEach(element => //Cogemos todos los inputs y limpiamos las alertas evitando repeticion de codigo
         element.addEventListener('keyup', (e)=>{
-            console.log(e.target.value);
-
-            this.errorAlerta(idAlerta,idAlertaTexto);
-            //Animacion.limpiarAlertaRoja(idAlerta,idAlertaTexto);
+            
+            Animacion.limpiarAlertaRoja(idAlerta,idAlertaTexto);
         })
     );
 };
-Formulario.prototype.errorAlerta = function(idAlerta,idAlertaTexto){
-    Animacion.alertaRoja(idAlerta,idAlertaTexto,"Los datos no son correctos");
-};
+
+
+
 

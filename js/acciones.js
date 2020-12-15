@@ -21,8 +21,11 @@ var Acciones= {
 
     iniciar: function(){
 
-       var form=new Formulario('entrada', 'input', 'alertaEntrada','alertaTextoEntrada','botonEntrada');
-        form.iniciar();
+        formEntrada=new Formulario('entrada', 'input', 'alertaEntrada','alertaTextoEntrada','botonEntrada');
+        formSalida=new Formulario('salida', 'input', 'alertaSalida','alertaTextoSalida','botonSalida');
+        formAlta=new Formulario('alta', 'input', 'alertaAlta','alertaTextoAlta','botonAlta');
+        formConsulta=new Formulario('salida', 'input', 'alertaSalida','alertaTextoSalida','botonSalida');
+       
         document.getElementById('matriculaEntrada').addEventListener('keyup', function(e){
             Animacion.limpiarAlertaRoja('alertaEntrada','alertaTextoEntrada');
         });
@@ -71,8 +74,6 @@ var Acciones= {
     this.btnEntrada.addEventListener('click', ()=>{
         Animacion.mostrarContenido('entrada');
         Animacion.ocultarContenido('salida');
-        Animacion.ocultarContenido('alta');
-        Animacion.ocultarContenido('consultar');
         Animacion.active('btnEntrada');
         Animacion.desactive('btnSalida');
         Animacion.desactive('btnAlta');
