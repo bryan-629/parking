@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Parking</title>
     <link rel="icon" type="image/png"  href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/utilidades.css">
     <link rel="stylesheet" href="../css/containers.css">
@@ -37,7 +37,7 @@
                  <h1 class="mb-2 txt-center">Entrada</h1>
              
                 <label for="matricula" class="mb-1">Matricula:</label>
-                 <input type="text" class="inputInicio mb-2" name="matricula" autofocus name="" id="matriculaEntrada" placeholder="Matricula">
+                 <input type="text" class="inputInicio mb-2" name="Matricula" autofocus name="" id="matriculaEntrada" placeholder="Matricula">
                  <button class="boton mt-1" id="botonEntrada">Entrar</button>
              </div>
              <div class="" id="alertaEntrada">
@@ -58,7 +58,7 @@
                  <h1 class="mb-2 txt-center">Salida</h1>
              
                 <label for="matricula" class="mb-1">Matricula:</label>
-                 <input type="text" class="inputInicio mb-2" autofocus name="matricula_salida" id="matriculaSalida" placeholder="Matricula">
+                 <input type="text" class="inputInicio mb-2" autofocus name="Matricula" id="matriculaSalida" placeholder="Matricula">
                  <button class="boton mt-1" id="botonSalida">Entrar</button>
              </div>
              <div class="" id="alertaSalida">
@@ -73,35 +73,35 @@
 
         <div class="containervh invisible" id="alta"> 
            
-            <div class="d-flex flex-dir-col mb-3 jus-center al-center" id="formulario">
+            <div class="d-flex flex-dir-col mb-1 jus-center al-center mt-3" id="formulario">
              
                  <h1 class="mb-2 txt-center">Alta</h1>
             <div class="d-flex">
              <div class="d-flex flex-dir-col ">
                 <label for="matricula" class="mb-1">Matricula:</label>
-                 <input type="text" class="inputInicio mb-2 " autofocus name="matricula_alta" id="matriculaAlta" placeholder="Matricula">
+                 <input type="text" class="inputInicio mb-2 " autofocus name="Matricula" id="matriculaAlta" placeholder="Matricula">
                  <label for="marcaAlta" class="mb-1">Marca:</label>
-                 <input type="text" class="inputInicio mb-2"  name="marca" id="marcaAlta" placeholder="Marca">
+                 <input type="text" class="inputInicio mb-2"  name="Marca" id="marcaAlta" placeholder="Marca">
                  <label for="modeloAlta" class="mb-1">Modelo:</label>
-                 <input type="text" class="inputInicio mb-2"  name="modelo" id="modeloAlta" placeholder="Modelo">
+                 <input type="text" class="inputInicio mb-2"  name="Modelo" id="modeloAlta" placeholder="Modelo">
                  
                 </div>
                 <div class="d-flex jus-center flex-dir-col">
                     <label for="colorAlta" class="mb-1 ml-1">Color:</label>
-                 <input type="text" class="inputInicio mb-2 ml-1" name="color" id="colorAlta" placeholder="Color">
+                 <input type="text" class="inputInicio mb-2 ml-1" name="Color" id="colorAlta" placeholder="Color">
                  <label for="nombrealta" class="mb-1 ml-1">Nombre del propietario:</label>
-                 <input type="text" class="inputInicio mb-2 ml-1" name="nombre" id="nombreAlta" placeholder="Nombre del propietario">
+                 <input type="text" class="inputInicio mb-2 ml-1" name="Nombre" id="nombreAlta" placeholder="Nombre del propietario">
                  <label for="apellidoAlta" class="mb-1 ml-1">Apellido:</label>
-                 <input type="text" class="inputInicio mb-2 ml-1"  name="apellido" id="apellidoAlta" placeholder="apellido">
+                 <input type="text" class="inputInicio mb-2 ml-1"  name="Apellido" id="apellidoAlta" placeholder="Apellido">
                  <label for="emailAlta" class="mb-1 ml-1">Email:</label>
-                 <input type="text" class="inputInicio mb-2 ml-1" name="email" id="emailAlta" placeholder="Email">
+                 <input type="text" class="inputInicio mb-2 ml-1" name="Email" id="emailAlta" placeholder="Email">
                 </div>
                  
              </div>
              <button class="boton mt-1" style="width: 80%;" id="botonAlta">Entrar</button>
             </div>
-             <div class="" id="alertaInicio">
-                 <p class="txt-center" id="alertaInicioTexto"></p>
+             <div class="" id="alertaAlta">
+                 <p class="txt-center" id="alertaTextoAlta"></p>
              </div>
         
         </div>
@@ -128,6 +128,7 @@
         
 
         <script src="../js/usuarios.js"></script>
+        <script src="../js/coches.js"></script>
         <script src="../js/Animaciones.js"></script>
         <script src="../js/RecogidaDatos.js"></script>
         <script src="../js/Formularios.js"></script>

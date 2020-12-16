@@ -1,5 +1,5 @@
-function Coches(){
-    constructor(matricula,marca,modelo,color,nombrePropietario,apellido,email)
+function Coches(matricula,marca,modelo,color,nombrePropietario,apellido,email){
+    
     this.matricula= matricula;
     this.marca= marca;
     this.modelo=modelo;
@@ -7,6 +7,4 @@ function Coches(){
     this.nombrePropietario=nombrePropietario;
     this.apellido=apellido;
     this.email=email;
-
-
 }

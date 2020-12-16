@@ -9,7 +9,7 @@ var Usuarios= {
     },
 
 
-    comprobar: function(nombre, contra){//Comprobamos si existen los datos introducidos
+    comprobar: function(nombre, contra){//Comprobamos si existen los datos introducidos. SE PROCESA EN RECOGIDA DE DATOS
        
         for(var i=0 ; i<this.usuario.length; i++){
             if (nombre==this.usuario[i]) {
