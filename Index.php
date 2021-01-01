@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -28,11 +29,11 @@
                 <h1 class="mb-2 txt-center">Inicio session</h1>
             
                <label for="inputUsuario" class="mb-1">Usuario:</label>
-                <input type="text" class="inputInicio mb-2" autofocus name="" id="inputUsuario" placeholder="Usuario">
+                <input type="text" class="inputInicio mb-2" autofocus name="user" id="inputUsuario" placeholder="Usuario">
                 <label for="contraseña" class="mb-1">Contraseña:</label>
-                <input type="password" class="inputInicio" id="contraseña" placeholder="Contraseña">
-                <button class="boton mt-3" id="botonEntrar">Entrar</button>
-            </div>
+                <input type="password" name="pass" class="inputInicio" id="contraseña" placeholder="Contraseña">
+                <button class="boton mt-3" type="submit" name="btnEntrar" id="botonEntrar">Entrar</button>
+            <div>
             <div class="" id="alertaInicio">
                 <p class="txt-center" id="alertaInicioTexto"></p>
             </div>
@@ -43,10 +44,12 @@
        </div>
 
 
+
+
        <script src="js/usuarios.js"></script>
        <script src="js/Animaciones.js"></script>
        <script src="js/RecogidaDatos.js"></script>
        <script src="js/inicio.js"></script>
         
     </body>
-</html>
+</html>'

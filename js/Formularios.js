@@ -16,38 +16,11 @@ function Formulario(formulario, inputs, idAlerta,idAlertaTexto,btn){
 
 
 
-Formulario.prototype.estaDentro = function (matricula) {
-    for (let index = 0; index < Acciones.garaje.length; index++) {
-        if(Acciones.garaje[index]==matricula){
-            index=Acciones.garaje.length;
-            return true;
-        }else if (index==Acciones.garaje.length - 1) {
-            
-            return false;
-        }
-
-        
-    }
-}
 
 
 
 
-Formulario.prototype.estaDadoDeAlta =function (matricula) {
-    
-    for (let index = 0; index < Acciones.clientes.length; index++) {
-        if(Acciones.clientes[index].matricula==matricula){
-            index=Acciones.clientes.length;
-            return true;
-        }else if (index==Acciones.clientes.length - 1) {
-            
-            return false;
-        }
 
-        
-    }
-    
-}
 
 
 Formulario.prototype.testInputs = function(inputArray){

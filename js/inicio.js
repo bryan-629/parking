@@ -9,7 +9,7 @@ var inicio ={
         console.log("App iniciada correctamente");
         Animacion.iniciar();
         Recoger.iniciar();  
-        Usuarios.iniciar();
+        
         
         
     }
